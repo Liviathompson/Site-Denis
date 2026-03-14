@@ -1,0 +1,669 @@
+:root {
+    --primary-blue: #203362;
+    --gold-light: #dfbc67;
+    --gold-dark: #997437;
+    --white: #ffffff;
+    --off-white: #f9f9f9;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.6; scroll-behavior: smooth; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* Navbar - Versão Final Limpa */
+.navbar { 
+    padding: 15px 0; 
+    background: var(--white); 
+    position: sticky; 
+    top: 0; 
+    z-index: 100; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+}
+
+.navbar .container { 
+    display: flex; 
+    justify-content: space-between; /* Força a separação máxima */
+    align-items: center; 
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px; 
+}
+
+/* Logo */
+.logo { height: 60px; background: transparent; display: block; }
+.logo-blend { mix-blend-mode: multiply; filter: contrast(1.1); }
+
+/* Esconder elementos do menu mobile que não são usados no desktop */
+.menu-toggle, .hamburger { display: none !important; }
+
+/* Menu de Navegação */
+nav { 
+    margin-left: auto; /* Empurra para a direita se o space-between falhar */
+}
+
+nav ul { 
+    display: flex; 
+    list-style: none; 
+    gap: 30px; /* Espaço entre os tópicos */
+    align-items: center; 
+    margin: 0;
+    padding: 0;
+}
+
+/* Links do Menu */
+nav a { 
+    text-decoration: none; 
+    color: var(--primary-blue); 
+    font-weight: 600; 
+    font-size: 1.1rem; 
+    transition: all 0.3s ease;
+    position: relative;
+    white-space: nowrap; /* Impede que o texto quebre linha */
+}
+
+nav a:hover { color: var(--gold-dark); }
+
+/* Efeito de linha no hover */
+nav a:not(.btn-nav):after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--gold-light);
+    transition: width 0.3s ease;
+}
+
+nav a:not(.btn-nav):hover:after { width: 100%; }
+
+/* Botão CTA na Navbar */
+.btn-nav { 
+    background: var(--gold-light) !important; 
+    color: var(--primary-blue) !important; 
+    padding: 10px 22px !important; 
+    border-radius: 6px; 
+}
+
+.btn-nav:hover {
+    background: var(--gold-dark) !important;
+    color: var(--white) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+/* Hero */
+.hero { padding: 80px 0; background: #f4f6f9; }
+.hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.tagline { color: var(--gold-dark); font-weight: 700; font-size: 0.8rem; letter-spacing: 2px; }
+.hero h1 { font-size: 2.8rem; color: var(--primary-blue); line-height: 1.2; margin: 20px 0; }
+.highlight { color: var(--gold-dark); }
+.hero-img img { width: 100%; border-radius: 15px; box-shadow: 20px 20px 0 var(--primary-blue); }
+
+/* Buttons */
+.cta-button { 
+    display: inline-block; background: var(--gold-light); color: var(--primary-blue); 
+    padding: 20px 30px; border-radius: 8px; font-weight: 700; text-decoration: none;
+    transition: 0.3s; text-align: center; border: none; cursor: pointer;
+}
+.cta-button:hover { background: var(--gold-dark); color: white; transform: translateY(-3px); }
+
+/* Dark Section (Problema) */
+.dark-section { background: var(--primary-blue); color: white; padding: 80px 0; text-align: center; }
+.subtitle-dark { font-size: 1.2rem; max-width: 850px; margin: 20px auto; opacity: 0.9; font-weight: 300; }
+.highlight-dark { font-size: 1.1rem;
+    color: var(--gold-light);
+    margin-bottom: 40px; /* Aumentei o espaço para os tópicos começarem */
+    display: block; /* Garante que a margem funcione corretamente */
+    text-align: center; }
+
+    /* Espaçamento entre os tópicos específicos desta seção */
+.gap-topics {
+    gap: 20px !important; /* Força um espaço maior entre cada card verticalmente */
+    margin-top: 30px;
+}
+
+/* Ajuste individual para garantir que não fiquem grudados em nenhuma tela */
+.gap-topics .deliverable-item-dark {
+    margin-bottom: 10px;
+}
+
+/* Texto final da seção com mais respiro */
+.final-text-dark {
+    margin-top: 60px; /* Mais espaço após os cards terminarem */
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    text-align: center;
+}
+
+/* General Section Styles */
+.section-title { text-align: center; color: var(--primary-blue); font-size: 2rem; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 1px; }
+
+/* Grid 4 (Pillars) */
+/* Seção Pilares com Fundo Azul */
+.pillars-dark {
+    padding: 100px 0;
+    background-color: var(--primary-blue); /* O azul escuro #203362 */
+    color: var(--white);
+}
+
+/* Centralização da frase de apoio */
+.subtitle-pillars {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px auto; /* Centraliza e dá espaço para os cards */
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.light-title {
+    color: var(--gold-light) !important; /* Título em dourado para destacar no azul */
+    margin-bottom: 60px;
+}
+
+/* Container que força 4 colunas em telas grandes */
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    padding: 40px 0;
+    align-items: stretch; /* Garante que todos os cards tenham a mesma altura */
+}
+
+/* Estilo do Card Principal */
+.card-pillar {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px; 
+    border-radius: 12px;
+    border: 1px solid rgba(223, 188, 103, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start;
+    cursor: pointer;
+}
+
+
+/* Container para alinhar Título e Número na mesma linha */
+.card-header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start; /* Alinha o número pelo topo do título */
+    margin-bottom: 20px;
+    gap: 10px; /* Garante que o número nunca encoste no texto */
+}
+
+.card-pillar h3 {
+   color: var(--gold-light);
+    font-size: 1.2rem;
+    margin: 0;
+    flex: 1; /* Faz o título ocupar o espaço disponível sem empurrar o número para fora */
+    line-height: 1.2;
+}
+
+/* Estilo do Número - Ajustado */
+.card-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: rgba(223, 188, 103, 0.2); 
+    line-height: 1;
+    flex-shrink: 0; /* Impede que o número seja "esmagado" por títulos longos */
+}
+
+/* Estilo da Descrição - Ajustado */
+.card-pillar p {
+   font-size: 0.9rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: left;
+    background: transparent; /* Remove o fundo interno */
+    padding: 0; /* Remove o padding interno */
+    border: none; /* Remove a borda interna */
+    
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start;
+    cursor: pointer; /* Muda o mouse para a "mãozinha" */
+}
+
+/* Efeito de destaque ao passar o mouse */
+.card-pillar:hover {
+    background: rgba(255, 255, 255, 0.12); /* Fundo brilha levemente */
+    border-color: var(--gold-light); /* Borda fica totalmente dourada */
+    transform: translateY(-10px) scale(1.03); /* Ele sobe e aumenta um pouco */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidade */
+}
+
+/* Efeito no número quando passa o mouse no card */
+.card-pillar:hover .card-number {
+    color: rgba(223, 188, 103, 0.6); /* O número 01, 02... ganha mais destaque */
+    transform: rotate(-10px);
+}
+
+/* ... mantenha os media queries de responsividade que já criamos ... */
+
+/* MRE Timeline */
+
+.mre-method { 
+    /* Aumentando para 120px para garantir que não fique grudado nas seções acima/abaixo */
+    padding: 120px 0; 
+    background: #f4f6f9; 
+}
+
+.timeline { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 40px; }
+.step {
+    background: white; 
+    padding: 35px 25px; 
+    border: 1px solid #eee; 
+    border-radius: 12px; 
+    text-align: center; 
+    transition: all 0.3s ease; /* Transição suave */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+}
+/* Efeito Hover nos Cards MRE */
+.step:hover {
+    transform: translateY(-8px); /* Sobe um pouco menos que os pilares para diferenciar */
+    border-color: var(--gold-light);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+    background-color: #ffffff;
+}
+
+.step h4 { 
+    color: var(--gold-dark); 
+    margin-bottom: 15px; 
+    font-size: 1.2rem; 
+    font-weight: 700;
+    /* Adicione as duas linhas abaixo */
+    white-space: nowrap; /* Impede que o texto quebre para a linha de baixo */
+    display: block;
+ }
+.subtitle-text { 
+    text-align: center; 
+    max-width: 900px;
+    margin: 0 auto 60px auto; /* Mais espaço antes dos cards */
+    color: #444;
+    font-size: 1.15rem; /* Um pouco maior */
+    line-height: 1.8;
+    font-weight: 500; /* Peso médio para destaque */
+}
+
+
+/* Sobre Denis França (Ajustado) */
+.about-denis { padding: 100px 0; background: var(--white); }
+.about-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; align-items: center; }
+.about-img img { width: 100%; border-radius: 15px; box-shadow: -15px 15px 0 var(--gold-light); }
+.about-content h2 { color: var(--primary-blue); margin-bottom: 20px; font-size: 2.2rem; }
+.about-content p { margin-bottom: 15px; text-align: justify; }
+.social-icons { margin-top: 30px; display: flex; gap: 20px; }
+.social-icons a { font-size: 1.6rem; color: var(--gold-dark); transition: 0.3s; text-decoration: none; }
+.social-icons a:hover { color: var(--primary-blue); transform: scale(1.1); }
+
+/* Seção O Que Você Vai Receber com Fundo Azul */
+.deliverables-section.dark-bg {
+    padding: 100px 0;
+    background-color: var(--primary-blue);
+    text-align: center;
+}
+
+.subtitle-text-light {
+    color: var(--white);
+    margin: -20px 0 50px 0;
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
+
+/* Força 2 colunas de cada lado no Desktop */
+.deliverables-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.deliverable-item-dark {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 22px;
+    border-radius: 10px;
+    border: 1px solid rgba(223, 188, 103, 0.1);
+    text-align: left;
+    transition: 0.3s ease;
+}
+
+.deliverable-item-dark:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--gold-light);
+    transform: scale(1.02);
+}
+
+.deliverable-item-dark i {
+    color: var(--gold-light);
+    font-size: 1.3rem;
+}
+
+.deliverable-item-dark span {
+    font-weight: 500;
+    color: var(--white);
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.deliverables-footer-light {
+    font-weight: 700;
+    color: var(--gold-light);
+    margin-top: 50px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.final-text-dark {
+    margin-top: 40px;
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsividade para Celular */
+@media (max-width: 850px) {
+    .deliverables-grid {
+        grid-template-columns: 1fr; /* No celular vira uma lista única */
+        gap: 15px;
+    }
+    
+    .deliverable-item-dark {
+        padding: 18px;
+    }
+}
+
+.deliverables-footer-light {
+    font-weight: 700;
+    color: var(--gold-light);
+    margin-top: 30px;
+    letter-spacing: 1px;
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 600px) {
+    .deliverables-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Seção de Preço Premium Refatorada */
+.pricing-white {
+    padding: 100px 0;
+    background-color: #ffffff; /* Fundo Branco solicitado */
+    text-align: center;
+}
+
+/* Nova Caixa Premium com Borda Dourada (Conforme imagem 1) */
+.premium-price-box {
+    max-width: 850px;
+    margin: 0 auto 30px auto; /* Espaço inferior para a barra de garantia */
+    background-color: var(--white);
+    padding: 60px 40px;
+    border-radius: 20px;
+    /* Borda superior tracejada conforme imagem */
+    border: 5px solid var(--gold-light);
+    
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza tudo */
+    box-shadow: 0 15px 40px rgba(0,0,0,0.03);
+}
+
+.price-title {
+    font-size: 1.8rem;
+    color: var(--primary-blue);
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+.price-description {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 650px;
+    margin-bottom: 20px;
+}
+
+.price-cta-text {
+    font-size: 1.15rem;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+/* Container de Preços */
+.price-container {
+    margin-bottom: 40px;
+}
+
+.main-price {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--primary-blue);
+    line-height: 1;
+}
+
+.separator {
+    font-size: 1.2rem;
+    color: #888;
+    margin: 10px 0;
+}
+
+.cash-price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-blue);
+}
+
+/* Lista de Recursos */
+.features-list {
+    list-style: none;
+    text-align: left;
+    display: inline-block; 
+    margin-bottom: 40px;
+}
+
+.features-list li {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.features-list i {
+    color: var(--gold-dark);
+    font-size: 1.2rem;
+}
+
+/* Botão CTA Conforme Imagem */
+.pricing-white .cta-button {
+    background-color: var(--gold-light);
+    color: var(--primary-blue);
+    padding: 22px 60px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(223, 188, 103, 0.3);
+}
+
+.pricing-white .cta-button:hover {
+    background-color: var(--gold-dark);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* BARRA DE GARANTIA (Conforme Imagem 2) */
+.guarantee-bar {
+    max-width: 850px;
+    margin: 0 auto;
+    background-color: #f0fff4; /* Verde bem claro de fundo */
+    border: 1px solid #c3e6cb; /* Borda verde suave */
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.guarantee-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #155724; /* Verde escuro para o texto */
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.guarantee-icon {
+    font-size: 1.4rem;
+    color: #28a745; /* Verde do escudo */
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .main-price { font-size: 2.5rem; }
+    .cash-price { font-size: 1.8rem; }
+    .price-title { font-size: 1.5rem; }
+    .premium-price-box { padding: 40px 20px; }
+    .guarantee-content { font-size: 1rem; flex-direction: column; text-align: center; }
+}
+
+
+/* Section Bônus Especial */
+.special-bonus {
+    padding: 80px 0;
+    background-color: var(--off-white);
+}
+
+.bonus-box {
+    max-width: 850px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 60px 40px;
+    border-radius: 20px;
+    border: 3px dashed var(--gold-light);
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+}
+
+.bonus-tag {
+    background: var(--gold-dark);
+    color: var(--white);
+    padding: 8px 25px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+.bonus-box h2 {
+    color: var(--primary-blue);
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    line-height: 1.3;
+}
+
+.bonus-item {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    text-align: left;
+    background: #fdfaf3;
+    padding: 40px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    border-left: 5px solid var(--gold-light);
+}
+
+.bonus-number {
+    font-size: 5rem;
+    font-weight: 800;
+    color: var(--gold-dark);
+    line-height: 1;
+}
+
+.bonus-text h3 {
+    color: var(--primary-blue);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.bonus-text p {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.bonus-action p {
+    font-weight: 600;
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+/* Reutilizando o estilo do botão principal com ajuste de largura */
+.bonus-action .cta-button {
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .bonus-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+    .bonus-number {
+        font-size: 4rem;
+    }
+    .bonus-box h2 {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* FAQ Accordion */
+.faq-section { padding: 80px 0; background-color: #fcfcfc; }
+.faq-container { max-width: 800px; margin: 0 auto; }
+.faq-item { background: #fff; margin-bottom: 15px; border-radius: 8px; border: 1px solid #eee; overflow: hidden; }
+.faq-question { width: 100%; padding: 22px; background: none; border: none; display: flex; justify-content: space-between; align-items: center; font-size: 1.05rem; font-weight: 600; color: var(--primary-blue); cursor: pointer; text-align: left; }
+.faq-question i { color: var(--gold-dark); transition: 0.3s; }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; padding: 0 22px; }
+.faq-answer p { padding-bottom: 22px; color: #555; font-size: 0.95rem; }
+.faq-item.active .faq-answer { max-height: 300px; }
+.faq-item.active .faq-question i { transform: rotate(180deg); }
+
+/* Footer */
+footer { background-color: var(--primary-blue); color: var(--white); padding: 80px 0 40px; text-align: center; }
+.social-links { display: flex; justify-content: center; gap: 30px; margin: 30px 0; }
+.social-links a { color: var(--gold-light); font-size: 2.2rem; transition: 0.3s; }
+.social-links a:hover { color: var(--white); transform: translateY(-5px); }
+.copyright { font-size: 0.85rem; opacity: 0.6; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px; margin-top: 20px; }
+
+/* Mobile Viewports */
+@media (max-width: 768px) {
+    .hero-grid, .about-grid { grid-template-columns: 1fr; text-align: center; }
+    .hero h1 { font-size: 2.2rem; }
+    .about-img img { box-shadow: 0 10px 20px rgba(0,0,0,0.1); margin-bottom: 20px; }
+    nav { display: none; }
+    .social-icons { justify-content: center; }
+}
