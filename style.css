@@ -215,6 +215,7 @@ nav a:not(.btn-nav):hover:after { width: 100%; }
 .bonus-box { max-width: 850px; margin: 0 auto; background: var(--white); padding: 60px 40px; border-radius: 20px; border: 3px dashed var(--gold-light); text-align: center; }
 .bonus-item { display: flex; align-items: center; gap: 30px; text-align: left; background: #fdfaf3; padding: 40px; border-radius: 15px; margin-bottom: 40px; border-left: 5px solid var(--gold-light); }
 .bonus-number { font-size: 5rem; font-weight: 800; color: var(--gold-dark); }
+.bonus-tag {color:var(--primary-blue); font-weight: 1000; font-size: 1.2rem}
 
 /* ============================================================
    FAQ, FOOTER E ACCORDION
